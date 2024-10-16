@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from 'next/font/google'
-import Theme from '@/lib/theme';
+import theme from '@/lib/theme';
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,9 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Theme>
-          {children}
-        </Theme>
+        <AppRouterCacheProvider options={{ key: 'css' }}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            {children}
+           </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

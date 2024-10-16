@@ -5,10 +5,9 @@ import {
   Box,
   Grid2 as Grid,
 } from "@mui/material";
-import Password from '@/components/password';
+import Password from "@/components/password";
 
-
-export default function Login() {
+export default function Register() {
   return (
     <Grid
       container
@@ -21,16 +20,13 @@ export default function Login() {
       <Grid size={{ xs: 12, sm: 4, lg: 3 }}>
         <Box component={"form"}>
           <FormGroup sx={{ marginBottom: 2 }}>
-            <TextField
-              id="email"
-              label="E-Mail"
-              variant="outlined"
-              fullWidth
-            />
+            <TextField id="email" label="E-Mail" variant="outlined" fullWidth />
           </FormGroup>
+
           <Password />
+
           <Button type="submit" variant="contained" color="primary" fullWidth>
-            {"Giriş Yap"}
+            {"Kayıt Ol"}
           </Button>
         </Box>
       </Grid>
