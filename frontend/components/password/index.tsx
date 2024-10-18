@@ -43,6 +43,7 @@ export default function Password() {
       <InputLabel htmlFor="password">{'Password'}</InputLabel>
       <OutlinedInput
         fullWidth
+        name="password"
         id="password"
         type={showPassword ? "text" : "password"}
         endAdornment={

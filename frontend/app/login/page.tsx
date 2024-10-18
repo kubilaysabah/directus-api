@@ -7,7 +7,6 @@ import {
 } from "@mui/material";
 import Password from '@/components/password';
 
-
 export default function Login() {
   return (
     <Grid

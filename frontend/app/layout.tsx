@@ -3,6 +3,7 @@ import { Roboto } from 'next/font/google'
 import theme from '@/lib/theme';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { SWRProvider } from './swr-provider'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,7 +30,9 @@ export default function RootLayout({
         <AppRouterCacheProvider options={{ key: 'css' }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            {children}
+            <SWRProvider>
+              {children}
+            </SWRProvider>
            </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
