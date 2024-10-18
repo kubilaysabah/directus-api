@@ -2,15 +2,15 @@
 
 import axios from 'axios'
 
-export async function Login() {
+export async function Login(email: string, password: string) {
   try {
     const response = await axios({
       url: `/api/auth/login`,
       baseURL: process.env.BASE_URL,
       method: "POST",
       data: {
-        email: "admin@example.com",
-        password: "12345678"
+        email,
+        password
       }
     });
 
@@ -51,10 +51,8 @@ export async function Register(formData: FormData, token: string | null) {
       },
     });
 
-    const data = response.data;
-
-    console.log(data);
+    return response.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }

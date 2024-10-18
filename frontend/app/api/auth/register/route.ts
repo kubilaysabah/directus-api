@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
     if (error.isAxiosError) {
       return new Response(JSON.stringify({ message: error.message, name: error.name, code: error.code }), {
-        status: error.code ? (typeof error.code === "string" ? +error.code : error.code) : 400,
+        status: error.code ? +error.code : 400,
       });
     }
 

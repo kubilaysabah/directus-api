@@ -15,7 +15,7 @@ export default function RegisterPage() {
         return;
       }
 
-      const data = await Login();
+      const { data } = await Login("admin@example.com", "12345678");
       
       if(!data) {
         return;

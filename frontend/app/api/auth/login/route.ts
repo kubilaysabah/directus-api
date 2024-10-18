@@ -6,12 +6,10 @@ export async function POST(request: NextRequest) {
 
   try {
     const response = await axios({
+      method: "POST",
       baseURL: process.env.BASE_API_URL,
-      url: "/users/login",
-      data: {
-        ...data,
-        mode: "json"
-      },
+      url: "/auth/login",
+      data
     })
 
     return new Response(JSON.stringify(response.data), {
